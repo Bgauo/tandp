@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>演唱曲目</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* 为了更接近图片中的柔和背景色，自定义一些颜色 */
+        body {
+            background-color: #f9fafb; /* 使用一个非常浅的灰色作为背景 */
+        }
+        .bg-custom-yellow { background-color: #FEF9C3; } /* 淡黄 */
+        .bg-custom-pink { background-color: #FCE7F3; } /* 淡粉 */
+        .bg-custom-green { background-color: #D1FAE5; } /* 淡绿 */
+        .bg-custom-orange { background-color: #FFE4E1; } /* 柔和橙粉 */
+        .bg-custom-blue { background-color: #E0E7FF; } /* 淡蓝 */
+        .bg-custom-pink-2 { background-color: #FFE4E6; }
+        .bg-custom-green-2 { background-color: #E6F4EA; }
+        .bg-custom-beige { background-color: #F5EFE6; }
+        .bg-custom-yellow-2 { background-color: #FFFBEB; }
+        .bg-custom-blue-2 { background-color: #EBF4FF; }
+
+        .song-card {
+            padding: 20px;
+            border-radius: 12px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            height: 100%;
+            color: #374151; /* 深灰色文字 */
+        }
+        .song-card .title {
+            font-size: 1.125rem; /* 18px */
+            font-weight: 700;
+            margin-bottom: 12px;
+        }
+        .song-card .songs p {
+            margin-bottom: 6px;
+            font-size: 1rem; /* 16px */
+        }
+        .song-card .subtitle {
+            margin-top: 16px;
+            font-weight: 600;
+            color: #4B5563; /* 稍深一点的灰色 */
+            font-size: 0.875rem; /* 14px */
+        }
+    </style>
+</head>
+<body>
+    <div class="container mx-auto px-4 py-8">
+        <header class="flex justify-between items-center mb-8">
+            <h1 class="text-2xl font-bold">王八与凤雏</h1>
+            <nav class="hidden md:flex items-center space-x-10 text-gray-600">
+                <a href="index.html" class="hover:text-black">首页</a>
+                <a href="songs.html" class="hover:text-black font-semibold text-black">演唱曲目</a>
+                <a href="aboutus.html" class="hover:text-black">关于我们</a>
+            </nav>
+            <div>
+                <svg width="40" height="40" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M50 2C35 15, 30 30, 40 40 C30 50, 25 60, 30 70 C35 80, 40 90, 50 98" stroke="#D1D5DB" stroke-width="2" stroke-linecap="round"/>
+                    <path d="M50 2C65 15, 70 30, 60 40 C70 50, 75 60, 70 70 C65 80, 60 90, 50 98" stroke="#D1D5DB" stroke-width="2" stroke-linecap="round"/>
+                    <circle cx="50" cy="45" r="5" fill="#A5B4FC"/>
+                    <circle cx="35" cy="75" r="3" fill="#FCA5A5"/>
+                    <circle cx="65" cy="75" r="3" fill="#FCA5A5"/>
+                    <circle cx="50" cy="15" r="2" fill="#818CF8"/>
+                </svg>
+            </div>
+        </header>
+
+        <main>
+            <div class="flex justify-between items-center mb-6">
+                <h2 class="text-3xl font-bold text-gray-800">演唱曲目</h2>
+                <a href="https://www.canva.cn/design/DAGy0k7jpLQ/lOySWM1aTZQsJ5vVuXNybQ/edit?utm_content=DAGy0k7jpLQ&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton" class="bg-gray-800 text-white px-5 py-2 rounded-lg hover:bg-gray-700 transition">查看更多</a>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6 mb-8">
+                <div class="song-card bg-custom-yellow">
+                    <div class="songs">
+                        <p>晴天</p>
+                        <p>蒲公英的约定</p>
+                        <p>江南</p>
+                        <p>模特</p>
+                        <p>后来的我们</p>
+                    </div>
+                    <h3 class="title">青春记忆与校园时光</h3>
+                </div>
+
+                <div class="song-card bg-custom-pink">
+                    <div>
+                        <div class="songs">
+                            <p>你要的爱</p>
+                            <p>雨爱</p>
+                            <p>爱爱爱</p>
+                            <p>多远都要在一起</p>
+                            <p>爱我还是他</p>
+                        </div>
+                    </div>
+                    <h3 class="title">甜蜜告白与爱恋表达</h3>
+                </div>
+
+                <div class="song-card bg-custom-green">
+                    <div>
+                        <div class="songs">
+                            <p>强军战歌</p>
+                            <p>这个家</p>
+                            <p>天路</p>
+                            <p>有我呢</p>
+                            <p>梦幻诛仙</p>
+                        </div>
+                    </div>
+                    <h3 class="title">励志与力量之歌</h3>
+                </div>
+
+                <div class="song-card bg-custom-orange">
+                    <div>
+                        <div class="songs">
+                            <p>你若三冬DJ版</p>
+                            <p>爱如火</p>
+                            <p>对面的小姐姐</p>
+                            <p>瞅</p>
+                        </div>
+                    </div>
+                    <p class="title">动感舞曲与节奏律动</p>
+                </div>
+
+                <div class="song-card bg-custom-blue">
+                    <div>
+                        <div class="songs">
+                            <p>天蓝蓝</p>
+                            <p>阿楚姑娘</p>
+                            <p>老姐</p>
+                            <p>同手同脚</p>
+                        </div>
+                    </div>
+                    <h3 class="title">治愈与温暖旋律</h3>
+                </div>
+                
+                 <div class="song-card bg-custom-pink-2">
+                    <div class="songs">
+                        <p>普通朋友</p>
+                        <p>爱情讯息</p>
+                        <p>认真的雪</p>
+                        <p>给自己的情书</p>
+                        <p>爱要坦荡荡</p>
+                    </div>
+                    <h3 class="title">经典情歌与浪漫絮语</h3>
+                </div>
+
+                <div class="song-card bg-custom-green-2">
+                    <div>
+                        <div class="songs">
+                            <p>青藏高原</p>
+                            <p>天路</p>
+                            <p>苹果香</p>
+                        </div>
+                    </div>
+                    <h3 class="title">异域风情与远方憧憬</h3>
+                </div>
+
+                <div class="song-card bg-custom-beige">
+                    <div>
+                        <div class="songs">
+                            <p>麦恩莉</p>
+                            <p>天路</p>
+                            <p>人鱼之歌</p>
+                            <p>演员</p>
+                            <p>爱错</p>
+                            <p>戒烟</p>
+                        </div>
+                    </div>
+                    <h3 class="title">独特风格与个性表达</h3>
+                </div>
+
+                <div class="song-card bg-custom-yellow-2">
+                    <div>
+                        <div class="songs">
+                            <p>两只老虎</p>
+                            <p>三只老虎</p>
+                            <p>姆巴佩是最棒的</p>
+                        </div>
+                    </div>
+                    <h3 class="title">纯真童趣与趣味改编</h3>
+                </div>
+
+                <div class="song-card bg-custom-blue-2">
+                    <div>
+                        <h3 class="title"></h3>
+                        <div class="songs">
+                            <p>青藏高原</p>
+                            <p>左手指月</p>
+                            <p>爱我还是他</p>
+                            <p>一样的月光</p>
+                            <p>当当</p>
+                        </div>
+                    </div>
+                    <h3 class="title">经典翻唱与致敬</h3>
+                </div>
+            </div>
+
+            <p class="text-center text-gray-500 mt-8">......更多歌曲，等你来补充！</p>
+        </main>
+    </div>
+</body>
+</html>

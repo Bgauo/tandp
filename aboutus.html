@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>王八与凤雏</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .card {
+            border-radius: 1rem;
+            background-color: #F3F4F6;
+            padding: 2rem;
+        }
+        .section-header {
+            font-size: 1.5rem;
+            font-weight: bold;
+            border-left: 4px solid #4B5563;
+            padding-left: 1rem;
+        }
+        .image-placeholder {
+            background-color: #D1D5DB;
+            height: 250px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #4B5563;
+            font-size: 1rem;
+            border-radius: 0.5rem;
+        }
+    </style>
+</head>
+<body class="bg-gray-100 font-sans">
+
+    <div class="container mx-auto px-4 py-8">
+        <header class="flex justify-between items-center mb-8">
+            <h1 class="text-2xl font-bold">王八与凤雏</h1>
+            <nav class="hidden md:flex items-center space-x-10 text-gray-600">
+                <a href="/tandp/index.html" class="hover:text-black">首页</a>
+                <a href="/tandp/songs.html" class="hover:text-black">演唱曲目</a>
+                <a href="/tandp/aboutus.html" class="hover:text-black font-semibold text-black">关于我们</a>
+            </nav>
+            <div>
+                <svg width="40" height="40" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M50 2C35 15, 30 30, 40 40 C30 50, 25 60, 30 70 C35 80, 40 90, 50 98" stroke="#D1D5DB" stroke-width="2" stroke-linecap="round"/>
+                    <path d="M50 2C65 15, 70 30, 60 40 C70 50, 75 60, 70 70 C65 80, 60 90, 50 98" stroke="#D1D5DB" stroke-width="2" stroke-linecap="round"/>
+                    <circle cx="50" cy="45" r="5" fill="#A5B4FC"/>
+                    <circle cx="35" cy="75" r="3" fill="#FCA5A5"/>
+                    <circle cx="65" cy="75" r="3" fill="#FCA5A5"/>
+                    <circle cx="50" cy="15" r="2" fill="#818CF8"/>
+                </svg>
+            </div>
+        </header>
+
+        <div class="bg-white p-6 rounded-lg shadow-md mb-8">
+            <h2 class="section-header font-bold mb-4">关于我们</h2>
+            <div class="md:flex md:space-x-8">
+                <div class="md:w-1/2 mb-4 md:mb-0">
+                    <div class="bg-gray-200 h-64 rounded-lg flex items-center justify-center relative overflow-hidden">
+                        <img src="/tandp/s/singing.jpg" alt="表演照片" class="w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-black bg-opacity-30 flex items-end justify-start p-4">
+                             <p class="text-white text-xl font-semibold">晚自习前一群人疯了一样在开演唱会</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="md:w-1/2 space-y-4">
+                    <div class="bg-gray-100 p-4 rounded-lg">
+                        <p class="text-gray-700">社会名流，知名歌星悉数到场。</p>
+                        <p class="text-gray-700">飞行嘉宾限时返场，主唱精心打磨10年。</p>
+                    </div>
+                    <div class="bg-gray-100 p-4 rounded-lg">
+                        <p class="text-gray-700">现场还有宠粉互动环节，以及惊喜演出等候着大家</p>
+                    </div>
+                    <div class="bg-gray-100 p-4 rounded-lg">
+                        <h3 class="font-bold text-lg mb-2">乐队成员：</h3>
+                        <p>苏睿圆、陈培毅、杨景程、刘启元</p>
+                        <p>吴卓燊、陈星林</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="relative bg-white p-6 rounded-lg shadow-md overflow-hidden">
+            <div class="section-header text-2xl font-bold mb-4 absolute top-6 left-6">特别鸣谢</div>
+            <div class="flex flex-col md:flex-row items-center md:items-end justify-center pt-16 md:pt-0 md:h-[400px]">
+                <div class="relative flex-1 flex flex-col items-center md:items-start p-4 mb-4 md:mb-0">
+                    <div class="relative">
+                        <img src="/tandp/s/zxzx.jpeg" alt="插画" class="rounded-lg">
+                        <div class="absolute top-1/3 left-1/4 transform -translate-x-1/2 -translate-y-1/2 bg-white rounded-full p-2 shadow-lg flex items-center space-x-2">
+                             <span class="text-red-500 text-lg font-bold">❤️</span>
+                             <span class="text-lg font-bold">1K</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="flex-1 flex flex-col items-center md:items-end text-center md:text-right p-4">
+                    <div class="bg-yellow-200 p-20 rounded-lg shadow-inner mb-4">
+                        <p class="font-semibold text-lg mb-2 text-xl">苏睿圆、陈培毅、杨景程、刘启元</p>
+                        <p class="font-semibold text-lg text-xl">吴卓燊、陈星林</p>
+                    </div>
+                    <p class="text-xl font-bold">以及</p>
+                    <p class="text-xl font-bold">5班强大的后勤团队 & Gamini</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
