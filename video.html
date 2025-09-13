@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>王八与凤雏 - 视频预览</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            background-color: #f5f5f5;
+            color: #1c1b1f;
+        }
+        .m3-card {
+            background-color: #ffffff;
+            border-radius: 28px;
+            box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.1), 0 6px 20px 0 rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+        .m3-video-container {
+            position: relative;
+            display: block;
+            width: 100%;
+            margin: 16px;
+            border-radius: 20px;
+            overflow: hidden;
+        }
+        .m3-video-container video {
+            display: block;
+            width: 100%;
+            object-fit: cover;
+        }
+        .m3-nav a {
+            color: #6750a4;
+            text-decoration: none;
+            padding: 8px 16px;
+            border-radius: 20px;
+            transition: background-color 0.3s ease;
+        }
+        .m3-nav a:hover {
+            background-color: #e8def8;
+            color: #6750a4;
+        }
+        .m3-nav a.active {
+            font-weight: 600;
+            color: #422a7b;
+            background-color: #e8def8;
+        }
+        /* Mobile navigation styles */
+        .mobile-menu {
+            transition: transform 0.3s ease-in-out;
+            transform: translateX(-100%);
+        }
+        .mobile-menu.open {
+            transform: translateX(0);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container mx-auto px-4 py-8">
+        <header class="flex justify-between items-center mb-8">
+            <button id="mobile-menu-button" class="md:hidden p-2 text-gray-600 hover:text-black">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+                </svg>
+            </button>
+
+            <h1 class="text-2xl font-bold">王八与凤雏</h1>
+            <nav class="hidden md:flex items-center space-x-10 text-gray-600">
+                <a href="/tandp/index.html" class="hover:text-black">首页</a>
+                <a href="/tandp/songs.html" class="hover:text-black">演唱曲目</a>
+                <a href="/tandp/aboutus.html" class="hover:text-black">关于我们</a>
+                <a href="/tandp/video.html" class="hover:text-black font-semibold text-black">视频预览</a>
+            </nav>
+            <div>
+                <svg width="40" height="40" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M50 2C35 15, 30 30, 40 40 C30 50, 25 60, 30 70 C35 80, 40 90, 50 98" stroke="#D1D5DB" stroke-width="2" stroke-linecap="round"/>
+                    <path d="M50 2C65 15, 70 30, 60 40 C70 50, 75 60, 70 70 C65 80, 60 90, 50 98" stroke="#D1D5DB" stroke-width="2" stroke-linecap="round"/>
+                    <circle cx="50" cy="45" r="5" fill="#A5B4FC"/>
+                    <circle cx="35" cy="75" r="3" fill="#FCA5A5"/>
+                    <circle cx="65" cy="75" r="3" fill="#FCA5A5"/>
+                    <circle cx="50" cy="15" r="2" fill="#818CF8"/>
+                </svg>
+            </div>
+        </header>
+
+        <div id="mobile-menu" class="mobile-menu fixed top-0 left-0 h-full w-64 bg-white shadow-xl z-50 p-6 md:hidden">
+            <div class="flex justify-end mb-4">
+                <button id="close-menu-button" class="p-2 text-gray-600 hover:text-black">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                    </svg>
+                </button>
+            </div>
+            <nav class="flex flex-col space-y-4">
+                <a href="/tandp/index.html" class="text-xl text-gray-600 hover:text-black">首页</a>
+                <a href="/tandp/songs.html" class="text-xl text-gray-600 hover:text-black">演唱曲目</a>
+                <a href="/tandp/aboutus.html" class="text-xl text-gray-600 hover:text-black">关于我们</a>
+                <a href="/tandp/video.html" class="text-xl font-semibold text-black hover:text-gray-800">视频预览</a>
+            </nav>
+        </div>
+
+        <div class="flex justify-center">
+            <div>
+                <div class="m3-video-container">
+                    <video controls autoplay muted loop playsinline>
+                        <source src="/tandp/s/pv.mp4" type="video/mp4">
+                        您的浏览器不支持视频标签。
+                    </video>
+                </div>
+                <div class="p-4">
+                    <h3 class="text-lg font-semibold mb-2">强军战歌</h3>
+                    <p class="text-sm text-gray-700">视频截取自0513的朋友圈。</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('mobile-menu-button').addEventListener('click', function() {
+            document.getElementById('mobile-menu').classList.add('open');
+        });
+        document.getElementById('close-menu-button').addEventListener('click', function() {
+            document.getElementById('mobile-menu').classList.remove('open');
+        });
+    </script>
+</body>
+</html>

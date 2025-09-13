@@ -6,15 +6,14 @@
     <title>演唱曲目</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        /* 为了更接近图片中的柔和背景色，自定义一些颜色 */
         body {
-            background-color: #f9fafb; /* 使用一个非常浅的灰色作为背景 */
+            background-color: #f9fafb;
         }
-        .bg-custom-yellow { background-color: #FEF9C3; } /* 淡黄 */
-        .bg-custom-pink { background-color: #FCE7F3; } /* 淡粉 */
-        .bg-custom-green { background-color: #D1FAE5; } /* 淡绿 */
-        .bg-custom-orange { background-color: #FFE4E1; } /* 柔和橙粉 */
-        .bg-custom-blue { background-color: #E0E7FF; } /* 淡蓝 */
+        .bg-custom-yellow { background-color: #FEF9C3; }
+        .bg-custom-pink { background-color: #FCE7F3; }
+        .bg-custom-green { background-color: #D1FAE5; }
+        .bg-custom-orange { background-color: #FFE4E1; }
+        .bg-custom-blue { background-color: #E0E7FF; }
         .bg-custom-pink-2 { background-color: #FFE4E6; }
         .bg-custom-green-2 { background-color: #E6F4EA; }
         .bg-custom-beige { background-color: #F5EFE6; }
@@ -28,33 +27,48 @@
             flex-direction: column;
             justify-content: space-between;
             height: 100%;
-            color: #374151; /* 深灰色文字 */
+            color: #374151;
         }
         .song-card .title {
-            font-size: 1.125rem; /* 18px */
+            font-size: 1.125rem;
             font-weight: 700;
             margin-bottom: 12px;
         }
         .song-card .songs p {
             margin-bottom: 6px;
-            font-size: 1rem; /* 16px */
+            font-size: 1rem;
         }
         .song-card .subtitle {
             margin-top: 16px;
             font-weight: 600;
-            color: #4B5563; /* 稍深一点的灰色 */
-            font-size: 0.875rem; /* 14px */
+            color: #4B5563;
+            font-size: 0.875rem;
+        }
+        /* Mobile navigation styles */
+        .mobile-menu {
+            transition: transform 0.3s ease-in-out;
+            transform: translateX(-100%);
+        }
+        .mobile-menu.open {
+            transform: translateX(0);
         }
     </style>
 </head>
 <body>
     <div class="container mx-auto px-4 py-8">
         <header class="flex justify-between items-center mb-8">
+            <button id="mobile-menu-button" class="md:hidden p-2 text-gray-600 hover:text-black">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+                </svg>
+            </button>
+
             <h1 class="text-2xl font-bold">王八与凤雏</h1>
-            <nav class="md:flex items-center space-x-10 text-gray-600">
+            <nav class="hidden md:flex items-center space-x-10 text-gray-600">
                 <a href="/tandp/index.html" class="hover:text-black">首页</a>
                 <a href="/tandp/songs.html" class="hover:text-black font-semibold text-black">演唱曲目</a>
                 <a href="/tandp/aboutus.html" class="hover:text-black">关于我们</a>
+                <a href="/tandp/video.html" class="hover:text-black">视频预览</a>
             </nav>
             <div>
                 <svg width="40" height="40" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -67,6 +81,22 @@
                 </svg>
             </div>
         </header>
+
+        <div id="mobile-menu" class="mobile-menu fixed top-0 left-0 h-full w-64 bg-white shadow-xl z-50 p-6 md:hidden">
+            <div class="flex justify-end mb-4">
+                <button id="close-menu-button" class="p-2 text-gray-600 hover:text-black">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                    </svg>
+                </button>
+            </div>
+            <nav class="flex flex-col space-y-4">
+                <a href="/tandp/index.html" class="text-xl text-gray-600 hover:text-black">首页</a>
+                <a href="/tandp/songs.html" class="text-xl font-semibold text-black hover:text-gray-800">演唱曲目</a>
+                <a href="/tandp/aboutus.html" class="text-xl text-gray-600 hover:text-black">关于我们</a>
+                <a href="/tandp/video.html" class="text-xl text-gray-600 hover:text-black">视频预览</a>
+            </nav>
+        </div>
 
         <main>
             <div class="flex justify-between items-center mb-6">
@@ -201,5 +231,14 @@
             <p class="text-center text-gray-500 mt-8">......更多歌曲，等你来补充！</p>
         </main>
     </div>
+
+    <script>
+        document.getElementById('mobile-menu-button').addEventListener('click', function() {
+            document.getElementById('mobile-menu').classList.add('open');
+        });
+        document.getElementById('close-menu-button').addEventListener('click', function() {
+            document.getElementById('mobile-menu').classList.remove('open');
+        });
+    </script>
 </body>
 </html>

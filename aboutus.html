@@ -27,17 +27,32 @@
             font-size: 1rem;
             border-radius: 0.5rem;
         }
+        /* Mobile navigation styles */
+        .mobile-menu {
+            transition: transform 0.3s ease-in-out;
+            transform: translateX(-100%);
+        }
+        .mobile-menu.open {
+            transform: translateX(0);
+        }
     </style>
 </head>
 <body class="bg-gray-100 font-sans">
 
     <div class="container mx-auto px-4 py-8">
         <header class="flex justify-between items-center mb-8">
+            <button id="mobile-menu-button" class="md:hidden p-2 text-gray-600 hover:text-black">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+                </svg>
+            </button>
+
             <h1 class="text-2xl font-bold">王八与凤雏</h1>
-            <nav class="md:flex items-center space-x-10 text-gray-600">
+            <nav class="hidden md:flex items-center space-x-10 text-gray-600">
                 <a href="/tandp/index.html" class="hover:text-black">首页</a>
                 <a href="/tandp/songs.html" class="hover:text-black">演唱曲目</a>
                 <a href="/tandp/aboutus.html" class="hover:text-black font-semibold text-black">关于我们</a>
+                <a href="/tandp/video.html" class="hover:text-black">视频预览</a>
             </nav>
             <div>
                 <svg width="40" height="40" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -50,6 +65,22 @@
                 </svg>
             </div>
         </header>
+
+        <div id="mobile-menu" class="mobile-menu fixed top-0 left-0 h-full w-64 bg-white shadow-xl z-50 p-6 md:hidden">
+            <div class="flex justify-end mb-4">
+                <button id="close-menu-button" class="p-2 text-gray-600 hover:text-black">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                    </svg>
+                </button>
+            </div>
+            <nav class="flex flex-col space-y-4">
+                <a href="/tandp/index.html" class="text-xl text-gray-600 hover:text-black">首页</a>
+                <a href="/tandp/songs.html" class="text-xl text-gray-600 hover:text-black">演唱曲目</a>
+                <a href="/tandp/aboutus.html" class="text-xl font-semibold text-black hover:text-gray-800">关于我们</a>
+                <a href="/tandp/video.html" class="text-xl text-gray-600 hover:text-black">视频预览</a>
+            </nav>
+        </div>
 
         <div class="bg-white p-6 rounded-lg shadow-md mb-8">
             <h2 class="section-header font-bold mb-4">关于我们</h2>
@@ -102,6 +133,15 @@
             </div>
         </div>
     </div>
+
+    <script>
+        document.getElementById('mobile-menu-button').addEventListener('click', function() {
+            document.getElementById('mobile-menu').classList.add('open');
+        });
+        document.getElementById('close-menu-button').addEventListener('click', function() {
+            document.getElementById('mobile-menu').classList.remove('open');
+        });
+    </script>
 
 </body>
 </html>
